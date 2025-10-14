@@ -1,3 +1,4 @@
 # karpman-apklausa
 Karpman dramos trikampio metodologijos įkvėpta apklausa
-pradek apklausa (https://github.com/olemoz1977/karpman-apklausa/public)
+[🚀 Pradėti apklausą](https://olemoz1977.github.io/karpman-apklausa/public)
+
