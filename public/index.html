@@ -3,359 +3,78 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Karpmano dramos trikampio savirefleksijos testas</title>
-<meta name="description" content="Apklausa lietuvių kalba pagal Karpmano dramos trikampį (Auka–Gelbėtojas–Persekiotojas) su automatine interpretacija ir rekomendacijomis pereiti į Išeities trikampį (Kūrėjas–Treneris–Iššūkių kėlėjas)." />
+<title>Dramos trikampio savirefleksija</title>
+<meta name="description" content="Savirefleksijos įrankis apie Aukos, Gelbėtojo ir Persekiotojo elgesio tendencijas konfliktinėse situacijose." />
 <style>
-  :root{
-    --bg:#0f172a; --card:#111827; --ink:#e5e7eb; --muted:#9ca3af;
-    --a:#06b6d4; --r:#22c55e; --p:#f59e0b; --accent:#64748b;
-  }
-  *{box-sizing:border-box}
-  body{margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.5}
-  header,main,footer{max-width:920px; margin:0 auto; padding:16px}
-  header h1{font-size:clamp(24px,3vw,34px); margin:8px 0 4px}
-  header p{color:var(--muted); margin:0 0 16px}
-  .card{background:var(--card); border:1px solid #1f2937; border-radius:14px; padding:18px; margin:14px 0}
-  .row{display:flex; gap:12px; align-items:center; justify-content:space-between; padding:10px 0; border-bottom:1px dashed #1f2937}
-  .row:last-child{border-bottom:none}
-  .qtext{flex:1; padding-right:10px}
-  .scale{display:flex; gap:8px; min-width:260px; justify-content:flex-end; flex-wrap:wrap}
-  label.opt{display:flex; flex-direction:column; align-items:center; font-size:12px; color:var(--muted)}
-  input[type="radio"]{accent-color:#7c3aed; width:18px; height:18px}
-  .hint{font-size:12px; color:var(--muted)}
-  .actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
-  button{background:#334155; color:#e2e8f0; border:1px solid #475569; padding:10px 14px; border-radius:10px; cursor:pointer}
-  button.primary{background:#4f46e5; border-color:#4338ca}
-  button:disabled{opacity:.6; cursor:not-allowed}
-  .bars{display:grid; gap:10px}
-  .bar{background:#0b1220; border:1px solid #1f2937; border-radius:10px; padding:10px}
-  .bar .label{display:flex; justify-content:space-between; font-weight:600; margin-bottom:6px}
-  .bar .track{height:14px; border-radius:8px; background:#111827; overflow:hidden}
-  .fill{height:100%; width:0}
-  .fill.a{background:linear-gradient(90deg, #0891b2, #06b6d4)}
-  .fill.r{background:linear-gradient(90deg, #16a34a, #22c55e)}
-  .fill.p{background:linear-gradient(90deg, #d97706, #f59e0b)}
-  details{background:#0b1220; border:1px solid #1f2937; border-radius:10px; padding:10px 12px}
-  details summary{cursor:pointer; color:#cbd5e1; font-weight:600; margin:6px 0}
-  .role{font-weight:700}
-  .note{font-size:12px; color:var(--muted)}
-  .pill{display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; border:1px solid #334155; color:#cbd5e1}
-  .tag-a{border-color:var(--a); color:var(--a)}
-  .tag-r{border-color:var(--r); color:var(--r)}
-  .tag-p{border-color:var(--p); color:var(--p)}
-  .footer{color:var(--muted); font-size:12px; text-align:center; margin:18px 0}
+:root{--bg:#0f172a;--card:#111827;--ink:#e5e7eb;--muted:#9ca3af;--a:#06b6d4;--r:#22c55e;--p:#f59e0b;--border:#1f2937}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}header,main,footer{max-width:920px;margin:0 auto;padding:16px}header h1{font-size:clamp(24px,3vw,34px);margin:8px 0 4px}header p{color:var(--muted);margin:0 0 16px}.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;margin:14px 0}.intro strong{color:#fff}.row{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--border)}.row:last-child{border-bottom:none}.qtext{flex:1;padding-right:10px}.scale{display:flex;gap:8px;min-width:260px;justify-content:flex-end;flex-wrap:wrap}label.opt{display:flex;flex-direction:column;align-items:center;font-size:12px;color:var(--muted)}input[type=radio]{accent-color:#7c3aed;width:18px;height:18px}.hint,.note{font-size:12px;color:var(--muted)}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}button{background:#334155;color:#e2e8f0;border:1px solid #475569;padding:10px 14px;border-radius:10px;cursor:pointer}button.primary{background:#4f46e5;border-color:#4338ca}.bars{display:grid;gap:10px}.bar{background:#0b1220;border:1px solid var(--border);border-radius:10px;padding:10px}.bar .label{display:flex;justify-content:space-between;gap:16px;font-weight:600;margin-bottom:6px}.track{height:14px;border-radius:8px;background:#111827;overflow:hidden}.fill{height:100%}.fill.a{background:linear-gradient(90deg,#0891b2,#06b6d4)}.fill.r{background:linear-gradient(90deg,#16a34a,#22c55e)}.fill.p{background:linear-gradient(90deg,#d97706,#f59e0b)}.tag{font-size:12px;color:var(--muted);font-weight:500}.insight{padding:12px;border:1px solid var(--border);border-radius:10px;margin:10px 0;background:#0b1220}.insight h3{margin:0 0 6px;font-size:16px}.footer{color:var(--muted);font-size:12px;text-align:center;margin:18px 0}@media(max-width:700px){.row{display:block}.scale{min-width:0;justify-content:space-between;margin-top:10px}}@media print{body{background:#fff;color:#000}.card,.bar,.insight{background:#fff;border-color:#ccc}.actions{display:none}}
 </style>
 </head>
 <body>
 <header>
-  <h1>Karpmano dramos trikampio savirefleksijos testas</h1>
-  <p>Kuris vaidmuo Tau dažniausiai „įsijungia“ konfliktuose: <span class="pill tag-a">Auka</span>, <span class="pill tag-r">Gelbėtojas</span> ar <span class="pill tag-p">Persekiotojas</span>? Užpildyk testą ir gauk asmeniškas rekomendacijas, kaip pereiti į Išeities trikampį (Kūrėjas–Treneris–Iššūkių kėlėjas).</p>
+  <h1>Dramos trikampio savirefleksija</h1>
+  <p>Ne „kas tu esi?“, o <strong>ką pradedi daryti, kai santykyje kyla įtampa?</strong></p>
 </header>
-
 <main>
+  <section class="card intro">
+    <strong>Trys vaidmenys nėra trys žmonių tipai.</strong>
+    <p>Žmogus gali pereiti tarp Aukos, Gelbėtojo ir Persekiotojo pozicijų priklausomai nuo situacijos. Šis klausimynas skirtas pastebėti santykinę tendenciją, o ne priklijuoti etiketę.</p>
+    <p class="note">Įrankį įkvėpė Stephen Karpman Dramos trikampio modelis. Tai nėra oficialus Karpman testas ir nėra diagnostinis ar klinikinis instrumentas.</p>
+  </section>
   <section id="form" class="card">
-    <h2 style="margin-top:0">Teiginiai</h2>
-    <p class="hint">Pažymėk, kaip dažnai su Tavimi atsitinka kiekvienas teiginys (1—Niekada … 5—Visada). Klausimų tvarka atsitiktinė. Kai kurie yra invertuoti balansuoti tendencingumą.</p>
+    <h2 style="margin-top:0">18 teiginių</h2>
+    <p class="hint">Pažymėk, kaip dažnai tai nutinka tau konfliktinėse ar įtemptose situacijose: 1 - niekada, 5 - labai dažnai.</p>
     <div id="questions"></div>
     <div class="actions">
-      <button id="shuffleBtn" type="button">↻ Sumaišyti tvarką</button>
-      <button id="resetBtn" type="button">Išvalyti atsakymus</button>
-      <button id="calcBtn" class="primary" type="button">Apskaičiuoti rezultatus</button>
+      <button id="shuffleBtn" type="button">↻ Sumaišyti</button>
+      <button id="resetBtn" type="button">Išvalyti</button>
+      <button id="calcBtn" class="primary" type="button">Pamatyti profilį</button>
       <button id="printBtn" type="button">Spausdinti / PDF</button>
-      <button id="saveBtn" type="button">Atsisiųsti rezultatus (JSON)</button>
     </div>
   </section>
-
-  <section id="results" class="card" style="display:none">
-    <h2 style="margin-top:0">Rezultatai</h2>
+  <section id="results" class="card" hidden>
+    <h2 style="margin-top:0">Tavo konflikto profilis</h2>
     <div class="bars" id="bars"></div>
-    <p class="note">Skalė: 0–100% pagal vidurkį (1–5) kiekvienam vaidmeniui. Aukštesnė reikšmė reiškia stipresnę tendenciją į atitinkamą vaidmenį konfliktinėse situacijose.</p>
+    <p class="note">Juostos lygina tik tavo tris šio klausimyno kryptis tarpusavyje. Jos nėra normos ir nerodo „kiek procentų“ esi vienas ar kitas vaidmuo.</p>
   </section>
-
-  <section id="insights" class="card" style="display:none">
-    <h2 style="margin-top:0">Interpretacija ir rekomendacijos</h2>
+  <section id="insights" class="card" hidden>
+    <h2 style="margin-top:0">Ką stebėti kitą kartą</h2>
     <div id="advice"></div>
-    <details style="margin-top:10px">
-      <summary>Kas yra „Išeities trikampis“?</summary>
-      <div class="hint">
-        Išeities trikampyje Auka pereina į <strong>Kūrėją</strong> (pabrėžiamas pasirinkimas ir atsakomybė), 
-        Gelbėtojas – į <strong>Trenerį</strong> (klausia, įgalina, o ne „gelbsti“), 
-        Persekiotojas – į <strong>Iššūkių kėlėją</strong> (meta pagarbius iššūkius, orientuotas į ribas ir standartus).
-      </div>
-    </details>
   </section>
 </main>
-
-<footer class="footer">
-  © <span id="year"></span> Karpmano testas (LT). Kodas: MIT licencija. Duomenys skaičiuojami tavo naršyklėje – niekur nesiunčiami.
-</footer>
-
+<footer class="footer">© <span id="year"></span> Oleg Mozochin + AI. Duomenys skaičiuojami tik tavo naršyklėje.</footer>
 <script>
-/** ===========================
- * KONFIGŪRACIJA: klausimai ir logika
- * ===========================
- * role: 'AUKA' | 'GELB' | 'PERS'
- * reverse: true -> invertuojamas (6 - atsakymas)
- */
-const ITEMS = [
-  // AUKA (6) – 2 invertuoti
-  { id:'A1', role:'AUKA', reverse:false, text:'Dažnai jaučiuosi bejėgis(-ė) spręsti konfliktus.' },
-  { id:'A2', role:'AUKA', reverse:false, text:'Laukiu, kol kiti išspręs mano problemas.' },
-  { id:'A3', role:'AUKA', reverse:true,  text:'Kai kyla problema, imuosi iniciatyvos nedelsdamas(-a).' },
-  { id:'A4', role:'AUKA', reverse:false, text:'Dažnai galvoju, kad su manimi elgiamasi neteisingai.' },
-  { id:'A5', role:'AUKA', reverse:false, text:'Atidėlioju veiksmus, nes abejoju, ar pavyks.' },
-  { id:'A6', role:'AUKA', reverse:true,  text:'Net ir konfliktuose jaučiu, kad turiu pasirinkimą ir įtaką.' },
-
-  // GELBĖTOJAS (6) – 2 invertuoti
-  { id:'G1', role:'GELB', reverse:false, text:'Jaučiu pareigą padėti kitiems, net jei jie to neprašo.' },
-  { id:'G2', role:'GELB', reverse:false, text:'Man sunku pasakyti „ne“ pagalbos prašymams.' },
-  { id:'G3', role:'GELB', reverse:false, text:'Dažnai sprendžiu kitų problemas už juos.' },
-  { id:'G4', role:'GELB', reverse:true,  text:'Prieš padėdamas(-a), pirmiausia paklausiu, ko žmogui tikrai reikia.' },
-  { id:'G5', role:'GELB', reverse:false, text:'Jaučiu kaltę, jei nepadedu, net kai tai kenkia mano planams.' },
-  { id:'G6', role:'GELB', reverse:true,  text:'Gerbiu kitų autonomiją ir ribas, net jei žinau „kaip geriau“.' },
-
-  // PERSEKIOTOJAS (6) – 2 invertuoti
-  { id:'P1', role:'PERS', reverse:false, text:'Dažnai atvirai įvardiju, ką žmonės daro ne taip.' },
-  { id:'P2', role:'PERS', reverse:false, text:'Konflikte svarbiau nugalėti nei susitarti.' },
-  { id:'P3', role:'PERS', reverse:false, text:'Kai kiti klysta, jaučiu norą juos sukontroliuoti.' },
-  { id:'P4', role:'PERS', reverse:false, text:'Kartais pakeliu balsą, kad būčiau išgirstas(-a).' },
-  { id:'P5', role:'PERS', reverse:true,  text:'Net konflikte prioritetas – pagarba ir bendradarbiavimas.' },
-  { id:'P6', role:'PERS', reverse:true,  text:'Kritiką teikiu taip, kad žmogus galėtų augti, o ne gintis.' },
+const ITEMS=[
+{id:'A1',role:'AUKA',reverse:false,text:'Konflikte greitai pajuntu, kad nuo manęs mažai kas priklauso.'},
+{id:'A2',role:'AUKA',reverse:false,text:'Kai situacija sudėtinga, laukiu, kad iniciatyvą perimtų kitas žmogus.'},
+{id:'A3',role:'AUKA',reverse:true,text:'Net įtemptoje situacijoje ieškau bent vieno žingsnio, kurį galiu padaryti pats.'},
+{id:'A4',role:'AUKA',reverse:false,text:'Konflikte dažnai ilgai galvoju apie tai, kaip neteisingai su manimi pasielgta.'},
+{id:'A5',role:'AUKA',reverse:false,text:'Atidėlioju veiksmą, nes abejoju, ar turiu realios įtakos rezultatui.'},
+{id:'A6',role:'AUKA',reverse:true,text:'Net kai kitas žmogus elgiasi sunkiai, matau savo pasirinkimus ir ribas.'},
+{id:'G1',role:'GELB',reverse:false,text:'Imuosi padėti net tada, kai žmogus aiškiai neprašė pagalbos.'},
+{id:'G2',role:'GELB',reverse:false,text:'Man sunku atsisakyti padėti, net kai dėl to nukenčia mano pačio planai.'},
+{id:'G3',role:'GELB',reverse:false,text:'Pastebėjęs kito problemą, dažnai imu ją spręsti už jį.'},
+{id:'G4',role:'GELB',reverse:true,text:'Prieš padėdamas paklausiu, kokios pagalbos žmogui iš tikrųjų reikia.'},
+{id:'G5',role:'GELB',reverse:false,text:'Jaučiu kaltę, jei leidžiu kitam pačiam susitvarkyti su problema.'},
+{id:'G6',role:'GELB',reverse:true,text:'Galiu palaikyti kitą neperimdamas jo atsakomybės.'},
+{id:'P1',role:'PERS',reverse:false,text:'Kai matau kito klaidą, pirmas impulsas yra nurodyti, ką jis daro blogai.'},
+{id:'P2',role:'PERS',reverse:false,text:'Konflikte man svarbu įrodyti, kad mano pozicija teisinga, net jei susitarimas nutolsta.'},
+{id:'P3',role:'PERS',reverse:false,text:'Kai kitas žmogus elgiasi ne taip, kaip tikėjausi, imu stipriau kontroliuoti jo veiksmus.'},
+{id:'P4',role:'PERS',reverse:false,text:'Kai jaučiu, kad manęs negirdi, didinu spaudimą arba kalbu aštriau.'},
+{id:'P5',role:'PERS',reverse:true,text:'Net nesutikdamas su žmogumi stengiuosi išlaikyti pagarbą ir smalsumą jo pozicijai.'},
+{id:'P6',role:'PERS',reverse:true,text:'Galiu aiškiai įvardyti ribą ar standartą nežemindamas žmogaus.'}
 ];
-
-// Ribos interpretacijoms pagal vidurkį (1–5)
-const THRESHOLDS = {
-  LOW: 2.5,   // < 2.5 – žema
-  MID: 3.5    // 2.5–3.5 – vidutinė; > 3.5 – aukšta
-};
-
-const ROLE_LABEL = {
-  'AUKA': 'Auka',
-  'GELB': 'Gelbėtojas',
-  'PERS': 'Persekiotojas'
-};
-
-const ROLE_COLORS = {
-  'AUKA': 'a',
-  'GELB': 'r',
-  'PERS': 'p'
-};
-
-/** Rekomendacijos pereiti į Išeities trikampį */
-function adviceFor(role, level){
-  const levels = { low:'žema', mid:'vidutinė', high:'aukšta' };
-  const L = levels[level];
-  if(role==='AUKA'){
-    return `
-      <p><span class="role">Auka (${L}):</span> jei pastebi aukštą arba vidutinę tendenciją, praktikuok <strong>Kūrėjo</strong> mąstyseną: 
-      suskaidyk problemą į mažus veiksmus, pasirink vieną konkretų žingsnį šiandien. Naudok klausimus: 
-      <em>„Ko noriu sukurti? Koks yra pirmas valdomas žingsnis? Kokių išteklių turiu?“</em> 
-      Fokusuokis į pasirinkimus, ne į apribojimus.</p>
-    `;
-  }
-  if(role==='GELB'){
-    return `
-      <p><span class="role">Gelbėtojas (${L}):</span> vietoj „aš padarysiu už tave“ pereik į <strong>Trenerio</strong> poziciją. 
-      Klausk: <em>„Kokios tau pagalbos reikia? Kokius variantus matai? Kuo galiu padėti, kad pats(-i) to išmoktum?“</em> 
-      Susitark dėl ribų ir leisk kitam išlaikyti savo atsakomybę.</p>
-    `;
-  }
-  if(role==='PERS'){
-    return `
-      <p><span class="role">Persekiotojas (${L}):</span> transformuok kontrolę į <strong>Iššūkių kėlėjo</strong> elgesį: 
-      aiškūs standartai + pagarbi kalba. Teik <em>elgesio</em> grįžtamąjį ryšį (BĮR): <em>„Kai [elgesys], poveikis [X]. Ko galime imtis?“</em> 
-      Skirk žmogų nuo problemos, kviesk kartu spręsti.</p>
-    `;
-  }
-  return '';
-}
-
-/** ===========================
- * UI kūrimas
- * =========================== */
-let order = shuffle([...ITEMS.map((_,i)=>i)]); // atsitiktinė tvarka
-
-function shuffle(arr){
-  for(let i=arr.length-1;i>0;i--){
-    const j = Math.floor(Math.random()* (i+1));
-    [arr[i],arr[j]]=[arr[j],arr[i]];
-  }
-  return arr;
-}
-
-function renderQuestions(){
-  const container = document.getElementById('questions');
-  container.innerHTML = '';
-  order.forEach((idx, n)=>{
-    const it = ITEMS[idx];
-    const row = document.createElement('div');
-    row.className = 'row';
-    row.innerHTML = `
-      <div class="qtext">
-        <div><strong>${n+1}.</strong> ${it.text} 
-          ${it.reverse ? ' <span class="hint">(invertuotas)</span>' : ''}
-        </div>
-      </div>
-      <div class="scale" role="radiogroup" aria-label="Likerto skalė">
-        ${[1,2,3,4,5].map(v=>{
-          const id = `${it.id}_${v}`;
-          const lbl = v===1?'Niekada':v===5?'Visada':v;
-          return `
-            <label class="opt" for="${id}">
-              <input type="radio" name="${it.id}" id="${id}" value="${v}">
-              <span>${lbl}</span>
-            </label>`;
-        }).join('')}
-      </div>
-    `;
-    container.appendChild(row);
-  });
-}
-
-function getResponses(){
-  const answers = {};
-  for(const it of ITEMS){
-    const sel = document.querySelector(`input[name="${it.id}"]:checked`);
-    answers[it.id] = sel ? Number(sel.value) : null;
-  }
-  return answers;
-}
-
-function isComplete(answers){
-  return Object.values(answers).every(v => v !== null);
-}
-
-function computeScores(answers){
-  const agg = {
-    AUKA: { sum:0, n:0 },
-    GELB: { sum:0, n:0 },
-    PERS: { sum:0, n:0 },
-  };
-  for(const it of ITEMS){
-    let v = answers[it.id];
-    if(v==null) continue;
-    if(it.reverse) v = 6 - v; // invertas
-    agg[it.role].sum += v;
-    agg[it.role].n += 1;
-  }
-  const res = {};
-  for(const role of Object.keys(agg)){
-    const {sum,n} = agg[role];
-    const avg = n ? sum/n : 0; // 1–5
-    const pct = Math.round(((avg-1)/4)*100); // 0–100
-    let level='mid';
-    if(avg < THRESHOLDS.LOW) level='low';
-    else if(avg > THRESHOLDS.MID) level='high';
-    res[role] = { avg, pct, level, raw:{sum,n} };
-  }
-  return res;
-}
-
-function renderBars(scores){
-  const bars = document.getElementById('bars');
-  bars.innerHTML = '';
-  for(const role of ['AUKA','GELB','PERS']){
-    const sc = scores[role];
-    const lab = ROLE_LABEL[role];
-    const color = ROLE_COLORS[role];
-    const bar = document.createElement('div');
-    bar.className='bar';
-    bar.innerHTML = `
-      <div class="label">
-        <div>${lab}</div>
-        <div>${sc.pct}% (vid. ${sc.avg.toFixed(2)}/5)</div>
-      </div>
-      <div class="track">
-        <div class="fill ${color}" style="width:${sc.pct}%"></div>
-      </div>
-      <div class="hint">Atsakymų sk.: ${sc.raw.n}, suma: ${sc.raw.sum.toFixed(2)}</div>
-    `;
-    bars.appendChild(bar);
-  }
-}
-
-function renderAdvice(scores){
-  const adv = document.getElementById('advice');
-  adv.innerHTML = `
-    ${adviceFor('AUKA', scores['AUKA'].level)}
-    ${adviceFor('GELB', scores['GELB'].level)}
-    ${adviceFor('PERS', scores['PERS'].level)}
-    <p class="note">Šis įrankis parodo elgesio <em>tendencijas</em> konfliktinėse situacijose. 
-    Rezultatai priklauso nuo konteksto (darbas, šeima, komanda) ir gali kisti laikui bėgant.</p>
-  `;
-}
-
-function saveJSON(payload){
-  const blob = new Blob([JSON.stringify(payload,null,2)], {type:'application/json'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = `karpman_rezultatai_${new Date().toISOString().slice(0,19)}.json`;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-}
-
-/** ===========================
- * Įvykiai
- * =========================== */
-document.getElementById('shuffleBtn').addEventListener('click', ()=>{
-  order = shuffle(order);
-  renderQuestions();
-});
-
-document.getElementById('resetBtn').addEventListener('click', ()=>{
-  document.querySelectorAll('input[type="radio"]:checked').forEach(i=> i.checked=false);
-  document.getElementById('results').style.display='none';
-  document.getElementById('insights').style.display='none';
-});
-
-document.getElementById('calcBtn').addEventListener('click', ()=>{
-  const answers = getResponses();
-  if(!isComplete(answers)){
-    const missing = ITEMS.filter(it=>answers[it.id]==null).map(it=>it.id).join(', ');
-    alert('Užpildyk visus teiginius. Trūksta: ' + missing);
-    return;
-  }
-  const scores = computeScores(answers);
-  renderBars(scores);
-  renderAdvice(scores);
-  document.getElementById('results').style.display='';
-  document.getElementById('insights').style.display='';
-  // paskutinės sesijos išsaugojimas localStorage
-  localStorage.setItem('karpman_last', JSON.stringify({answers, scores, ts: Date.now()}));
-});
-
-document.getElementById('printBtn').addEventListener('click', ()=> window.print());
-
-document.getElementById('saveBtn').addEventListener('click', ()=>{
-  const answers = getResponses();
-  const complete = isComplete(answers);
-  const payload = {
-    meta:{ tool:'Karpmano testas (LT)', version:'1.0.0', time:new Date().toISOString(), complete },
-    answers,
-    scores: complete ? computeScores(answers) : null
-  };
-  saveJSON(payload);
-});
-
-// Auto-užpildymas iš paskutinės sesijos (jei nori – galima išjungti)
-(function restore(){
-  const raw = localStorage.getItem('karpman_last');
-  if(!raw) return;
-  try{
-    const {answers} = JSON.parse(raw);
-    if(!answers) return;
-    for(const [id,v] of Object.entries(answers)){
-      if(v==null) continue;
-      const el = document.getElementById(`${id}_${v}`);
-      if(el) el.checked = true;
-    }
-  }catch(e){}
-})();
-
-// Render
-renderQuestions();
-document.getElementById('year').textContent = new Date().getFullYear();
+const LABEL={AUKA:'Auka',GELB:'Gelbėtojas',PERS:'Persekiotojas'}, COLOR={AUKA:'a',GELB:'r',PERS:'p'};
+let order=[...ITEMS.keys()];
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function render(){const c=document.getElementById('questions');c.innerHTML='';order.forEach((idx,n)=>{const it=ITEMS[idx],row=document.createElement('div');row.className='row';row.innerHTML=`<div class="qtext"><strong>${n+1}.</strong> ${it.text}</div><div class="scale">${[1,2,3,4,5].map(v=>`<label class="opt"><input type="radio" name="${it.id}" value="${v}"><span>${v===1?'Niekada':v===5?'Labai dažnai':v}</span></label>`).join('')}</div>`;c.appendChild(row)})}
+function responses(){const a={};ITEMS.forEach(it=>{const e=document.querySelector(`input[name="${it.id}"]:checked`);a[it.id]=e?+e.value:null});return a}
+function scores(){const a=responses(),agg={AUKA:{sum:0,n:0},GELB:{sum:0,n:0},PERS:{sum:0,n:0}};ITEMS.forEach(it=>{let v=a[it.id];if(v==null)return;if(it.reverse)v=6-v;agg[it.role].sum+=v;agg[it.role].n++});const out={};Object.keys(agg).forEach(k=>out[k]=agg[k].sum/agg[k].n);return out}
+function relativeTags(s){const vals=Object.values(s),max=Math.max(...vals),min=Math.min(...vals);const tags={};Object.keys(s).forEach(k=>{if(max-min<0.35)tags[k]='Panašiai ryški kaip kitos';else if(s[k]===max)tags[k]='Šiame atsakyme ryškiausia';else if(s[k]===min)tags[k]='Šiame atsakyme rečiau pasirodo';else tags[k]='Tarpinė tendencija'});return tags}
+function renderBars(s){const bars=document.getElementById('bars'),tags=relativeTags(s);bars.innerHTML='';['AUKA','GELB','PERS'].forEach(k=>{const pct=Math.max(0,Math.min(100,((s[k]-1)/4)*100)),b=document.createElement('div');b.className='bar';b.innerHTML=`<div class="label"><span>${LABEL[k]}</span><span class="tag">${tags[k]}</span></div><div class="track"><div class="fill ${COLOR[k]}" style="width:${pct}%"></div></div>`;bars.appendChild(b)})}
+function renderAdvice(s){const top=Object.keys(s).sort((a,b)=>s[b]-s[a])[0];const common=`<div class="insight"><h3>Stebėk persijungimą</h3><p>Kitą kartą kylant įtampai pabandyk pastebėti momentą prieš veiksmą: ką dabar bandau kontroliuoti, už ką prisiimu per daug atsakomybės arba kur atiduodu savo įtaką kitam?</p></div>`;const map={AUKA:`<div class="insight"><h3>Jei įsijungia Auka → daugiau Kūrėjo pozicijos</h3><p>Klausk: „Ką šioje situacijoje galiu pasirinkti? Koks mažiausias veiksmas priklauso nuo manęs? Kur turiu įvardyti ribą?“</p></div>`,GELB:`<div class="insight"><h3>Jei įsijungia Gelbėtojas → daugiau Trenerio pozicijos</h3><p>Prieš padėdamas klausk: „Ko tau reikia iš manęs?“ ir „Ką gali padaryti pats?“ Padėk neperimdamas kito žmogaus atsakomybės.</p></div>`,PERS:`<div class="insight"><h3>Jei įsijungia Persekiotojas → daugiau pagarbaus iššūkio</h3><p>Įvardyk konkretų elgesį, jo poveikį ir reikalingą ribą. Stenkis kovoti su problema, ne su žmogumi.</p></div>`};document.getElementById('advice').innerHTML=map[top]+common}
+function complete(a){return Object.values(a).every(v=>v!==null)}
+document.getElementById('shuffleBtn').onclick=()=>{order=shuffle(order);render()};document.getElementById('resetBtn').onclick=()=>{document.querySelectorAll('input[type=radio]').forEach(e=>e.checked=false);document.getElementById('results').hidden=true;document.getElementById('insights').hidden=true};document.getElementById('calcBtn').onclick=()=>{const a=responses();if(!complete(a)){alert('Atsakyk į visus 18 teiginių.');return}const s=scores();renderBars(s);renderAdvice(s);document.getElementById('results').hidden=false;document.getElementById('insights').hidden=false;document.getElementById('results').scrollIntoView({behavior:'smooth'})};document.getElementById('printBtn').onclick=()=>window.print();document.getElementById('year').textContent=new Date().getFullYear();order=shuffle(order);render();
 </script>
 </body>
 </html>
