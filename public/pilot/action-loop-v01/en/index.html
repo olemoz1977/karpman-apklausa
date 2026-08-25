@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Drama Triangle · reflection → experiment</title>
+<meta name="description" content="EN product pilot: Drama Triangle self-reflection, one self-chosen behaviour experiment and a later return to it." />
+<meta name="color-scheme" content="light" />
+<style>
+:root{
+  --bg:#eef2f0;--card:#fff;--ink:#17231f;--soft:#51615a;--line:#d4ddd8;
+  --teal:#356b61;--deep:#244b44;--tint:#e3efeb;--victim:#607f91;
+  --rescuer:#4e8370;--persecutor:#aa7650;--shadow:0 18px 50px rgba(28,48,40,.065);
+  --radius:22px;--max:880px
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+button,a,input,textarea{font:inherit}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.shell{width:min(var(--max),calc(100% - 28px));margin:0 auto}
+.site-head{position:sticky;top:0;z-index:20;background:rgba(238,242,240,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(82,105,94,.1)}
+.site-head .shell{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:20px;font-weight:600;letter-spacing:-.02em}
+.head-actions{display:flex;gap:8px;align-items:center}
+.badge{border:1px solid rgba(53,107,97,.22);background:var(--tint);color:var(--deep);border-radius:999px;padding:6px 9px;font-size:11px;font-weight:750;letter-spacing:.05em;text-transform:uppercase}
+.back-link{color:var(--soft);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:13px;white-space:nowrap;background:rgba(255,255,255,.55)}
+.hero{padding:50px 0 24px}
+.eyebrow{margin:0 0 10px;color:var(--deep);font-size:12px;font-weight:750;letter-spacing:.13em;text-transform:uppercase}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,8vw,66px);line-height:.99;letter-spacing:-.045em;margin:0 0 20px;max-width:780px;font-weight:600}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(25px,4vw,34px);letter-spacing:-.025em;margin:0;line-height:1.1}
+h3{margin:0;font-size:17px}
+.lead{font-size:clamp(17px,2.5vw,21px);line-height:1.55;color:#344a41;max-width:740px;margin:0}
+.role-pills{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 0}.pill{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border-radius:999px;border:1px solid var(--line);font-size:13px;background:rgba(255,255,255,.58)}.pill:before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}.tag-a{color:var(--victim)}.tag-r{color:var(--rescuer)}.tag-p{color:var(--persecutor)}
+.boundary{margin-top:22px;padding:14px 16px;border-left:3px solid var(--teal);background:rgba(255,255,255,.48);color:var(--soft);font-size:14px;max-width:740px}.boundary a{color:var(--deep)}
+main{padding:8px 0 80px}.card{background:rgba(255,255,255,.75);border:1px solid rgba(79,103,92,.13);border-radius:var(--radius);padding:clamp(18px,4vw,32px);box-shadow:var(--shadow);margin:18px 0}.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}.hint,.note{font-size:13px;color:var(--soft)}
+.progress-wrap{margin:20px 0 26px;padding-top:14px;border-top:1px solid var(--line)}.progress-meta{display:flex;justify-content:space-between;gap:12px;color:var(--soft);font-size:13px;margin-bottom:8px}.progress-track{height:5px;background:#dfe6e2;border-radius:999px;overflow:hidden}.progress-fill{height:100%;width:0;background:var(--teal);border-radius:999px;transition:width .2s ease}
+#questions{display:grid;gap:12px}.row{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:20px;align-items:center;transition:border-color .16s ease,box-shadow .16s ease}.row:focus-within{border-color:rgba(53,107,97,.52);box-shadow:0 0 0 4px rgba(53,107,97,.07)}.qnum{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--tint);color:var(--deep);font-size:12px;font-weight:750;margin-right:8px;vertical-align:middle}.qtext{font-size:16px;line-height:1.5}.scale{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}.opt{position:relative;display:grid;place-items:center}.opt input{position:absolute;opacity:0;pointer-events:none}.opt span{width:100%;min-height:48px;border:1px solid var(--line);border-radius:13px;background:#f7f9f8;color:var(--soft);display:grid;place-items:center;text-align:center;padding:5px 3px;font-size:12px;transition:all .14s ease}.opt input:checked+span{background:var(--tint);border:2px solid var(--teal);color:var(--deep);font-weight:750}.scale-legend{grid-column:1/-1;display:flex;justify-content:space-between;color:var(--soft);font-size:11px;padding:0 2px}
+.actions,.result-actions,.choice-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}.actions,.result-actions{padding-top:20px;border-top:1px solid var(--line)}
+button,.button-link{border:1px solid var(--line);background:rgba(255,255,255,.78);color:var(--ink);padding:11px 15px;border-radius:999px;text-decoration:none;font-weight:650;font-size:14px;transition:all .15s ease}button:hover,.button-link:hover{border-color:rgba(53,107,97,.46);background:#fff;color:var(--deep);transform:translateY(-1px)}button.primary{background:var(--teal);border-color:var(--teal);color:#fff;padding-inline:20px}button.primary:hover{background:var(--deep);border-color:var(--deep);color:#fff}button.subtle{background:transparent}.danger-link{color:#85544a}
+.results-card{background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(227,239,235,.68))}.bars{display:grid;gap:12px;margin-top:20px}.bar{background:rgba(255,255,255,.76);border:1px solid var(--line);border-radius:16px;padding:16px}.bar .label{display:flex;justify-content:space-between;gap:18px;font-weight:650;margin-bottom:10px;align-items:baseline}.bar .label div:last-child{color:var(--soft);font-size:13px;font-weight:500;text-align:right}.bar .track{height:8px;border-radius:999px;background:#dfe6e2;overflow:hidden}.fill{height:100%;width:0;border-radius:999px;transition:width .5s ease}.fill.a{background:var(--victim)}.fill.r{background:var(--rescuer)}.fill.p{background:var(--persecutor)}
+.direction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}.direction{border:1px solid var(--line);background:#fff;border-radius:17px;padding:16px;text-align:left;display:grid;gap:7px;min-height:150px;transition:.15s}.direction:hover{border-color:rgba(53,107,97,.42)}.direction.selected{border:2px solid var(--teal);background:var(--tint);box-shadow:0 0 0 3px rgba(53,107,97,.07)}.direction .mini{font-size:11px;color:var(--soft);text-transform:uppercase;letter-spacing:.06em;font-weight:750}.direction p{font-size:13px;color:var(--soft);margin:0}.builder{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}.builder label{display:block;font-size:13px;font-weight:750;margin-bottom:7px}.builder textarea{width:100%;min-height:104px;resize:vertical;border:1px solid var(--line);border-radius:14px;padding:12px 13px;background:#fff;color:var(--ink);line-height:1.45}.example-line{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;color:var(--soft);font-size:12px}.reminder-options{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.reminder-option{position:relative}.reminder-option input{position:absolute;opacity:0}.reminder-option span{display:inline-block;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:13px}.reminder-option input:checked+span{background:var(--tint);border:2px solid var(--teal);color:var(--deep);font-weight:750}
+.saved-box{margin-top:18px;border:1px solid rgba(53,107,97,.28);background:#f7fbf9;border-radius:18px;padding:17px}.saved-box .experiment-text{font-family:Georgia,"Times New Roman",serif;font-size:21px;line-height:1.35;margin:8px 0 10px}.meta-row{display:flex;gap:8px;flex-wrap:wrap;color:var(--soft);font-size:12px}.meta-chip{border:1px solid var(--line);border-radius:999px;padding:5px 8px;background:#fff}.return-card{border:1px solid rgba(53,107,97,.3);background:linear-gradient(145deg,#fff,#e7f1ed)}.return-card .experiment-text{font-family:Georgia,"Times New Roman",serif;font-size:clamp(21px,4vw,28px);line-height:1.3;margin:12px 0}.status-line{font-size:13px;color:var(--deep);font-weight:750}
+.followup-options{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}.followup-option{border:1px solid var(--line);background:#fff;border-radius:14px;padding:12px 9px;text-align:center;font-weight:650}.followup-option.selected{border:2px solid var(--teal);background:var(--tint);color:var(--deep)}
+.small-link{border:0;background:transparent;padding:0;color:var(--deep);text-decoration:underline;font-size:12px;font-weight:600;transform:none!important}.quiet{margin-top:14px;padding:13px 14px;border-radius:14px;background:#f6f8f7;color:var(--soft);font-size:13px}.hidden{display:none!important}
+footer{padding:0 0 36px;color:var(--soft);font-size:12px;text-align:center}
+@media(max-width:760px){.row{grid-template-columns:1fr;gap:14px}.direction-grid{grid-template-columns:1fr}.followup-options{grid-template-columns:1fr 1fr}.section-head{align-items:flex-start;flex-direction:column}.bar .label{align-items:flex-start;flex-direction:column;gap:3px}.bar .label div:last-child{text-align:left}}
+@media(max-width:460px){.shell{width:min(var(--max),calc(100% - 18px))}.site-head .shell{min-height:58px}.badge{display:none}.back-link{padding:7px 9px}.card{border-radius:18px;padding:16px 13px}.row{padding:15px 12px}.scale{gap:4px}.opt span{font-size:11px;min-height:46px}.followup-options{grid-template-columns:1fr}.actions button,.result-actions button,.button-link{width:100%;text-align:center}.example-line{align-items:flex-start;flex-direction:column}}
+@media print{.site-head,#form,#actionSection,#followupSection,#returnCard,.result-actions{display:none!important}body{background:#fff}.shell{width:100%;max-width:none}.hero{padding:0 0 16px}.card{box-shadow:none;border:1px solid #ddd;background:#fff}#results,#insights{display:block!important}}
+</style>
+</head>
+<body>
+<div class="site-head"><div class="shell"><span class="brand">Drama Triangle</span><div class="head-actions"><span class="badge">product pilot v0.1</span><a class="back-link" href="https://2rasi.com/#experiments">← 2rasi</a></div></div></div>
+<header class="hero shell">
+<p class="eyebrow">Conflict-role reflection · EN pilot</p>
+<h1>Noticing is not enough. What would you like to try differently?</h1>
+<p class="lead">Start with the same 18-statement self-reflection map. Then stop there, or choose one small behaviour experiment and come back to it later.</p>
+<div class="role-pills"><span class="pill tag-a">Victim</span><span class="pill tag-r">Rescuer</span><span class="pill tag-p">Persecutor</span></div>
+<div class="boundary">This is a self-reflection tool, not a diagnosis. Results depend on context and are not a normative psychological assessment.</div>
+</header>
+<main class="shell">
+<section id="returnCard" class="card return-card hidden" aria-live="polite">
+  <p class="eyebrow">Your previous experiment</p>
+  <div id="returnStatus" class="status-line"></div>
+  <div id="returnExperiment" class="experiment-text"></div>
+  <div id="returnMeta" class="meta-row"></div>
+  <div class="choice-row"><button id="reviewNowBtn" class="primary" type="button">Return to it</button><button id="deleteExperimentBtn" class="subtle danger-link" type="button">Delete from this device</button></div>
+</section>
+
+<section id="followupSection" class="card hidden">
+  <p class="eyebrow">Return</p><h2>What happened?</h2>
+  <p class="note">This is not a success/failure judgement. Just record what actually happened.</p>
+  <div class="followup-options" id="followupOptions">
+    <button class="followup-option" data-outcome="done" type="button">I tried it</button>
+    <button class="followup-option" data-outcome="partial" type="button">Partly</button>
+    <button class="followup-option" data-outcome="not_done" type="button">I didn't try it</button>
+    <button class="followup-option" data-outcome="closed" type="button">No longer relevant</button>
+  </div>
+  <div class="builder"><label for="followupNote">What did you notice? <span class="note">(optional)</span></label><textarea id="followupNote" maxlength="500" placeholder="One sentence for yourself. This text stays only on this device."></textarea><div class="choice-row"><button id="saveFollowupBtn" class="primary" type="button">Save reflection</button><button id="cancelFollowupBtn" type="button">Cancel</button></div></div>
+</section>
+
+<section id="form" class="card">
+  <div class="section-head"><div><p class="eyebrow">18 statements</p><h2>How often does this happen?</h2></div><p class="hint">1 = never · 5 = always</p></div>
+  <p class="hint">Answer based on what is usually true in real conflict situations. Item order is randomized; some statements are keyed in the opposite direction.</p>
+  <div class="progress-wrap" aria-live="polite"><div class="progress-meta"><span>Answered</span><strong id="progressText">0 / 18</strong></div><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
+  <div id="questions"></div>
+  <div class="actions"><button id="calcBtn" class="primary" type="button">Show result</button><button id="shuffleBtn" type="button">↻ Shuffle</button><button id="resetBtn" type="button">Clear answers</button></div>
+</section>
+
+<section id="results" class="card results-card hidden">
+  <p class="eyebrow">Your response map</p><h2>Results</h2><div class="bars" id="bars"></div>
+  <p class="note">The percentage shown here is not a normative psychological score. It only converts your average response for each role from the 1–5 scale into a 0–100 scale to make the map easier to read.</p>
+  <div class="result-actions"><button id="printBtn" type="button">Print / PDF</button><button id="saveBtn" type="button">Download JSON</button><a class="button-link" href="https://2rasi.com/#experiments">← 2rasi</a></div>
+</section>
+
+<section id="insights" class="card hidden">
+  <p class="eyebrow">Reflection, not instruction</p><h2>Three possible exit directions</h2>
+  <div class="boundary" style="max-width:none"><strong>Important origin note.</strong> Creator, Coach and Challenger are not original roles from Karpman's Drama Triangle. They are an alternative role set proposed by David Emerald's <a href="https://theempowermentdynamic.com/about/" target="_blank" rel="noopener">The Empowerment Dynamic (TED*)</a>. Here they are used only as language for self-reflection.</div>
+  <div class="direction-grid" aria-label="Possible exit directions">
+    <div class="direction" aria-hidden="true"><span class="mini">Victim → Creator direction</span><h3>More choice</h3><p>Shift from “what is this situation doing to me?” toward “what can I do now that is within my control?”</p></div>
+    <div class="direction" aria-hidden="true"><span class="mini">Rescuer → Coach direction</span><h3>More questions and boundaries</h3><p>Do not take over another person's responsibility; help them keep it.</p></div>
+    <div class="direction" aria-hidden="true"><span class="mini">Persecutor → Challenger direction</span><h3>Clear, respectful challenge</h3><p>Talk about specific behaviour, impact and expectations, not the person's worth.</p></div>
+  </div>
+</section>
+
+<section id="actionSection" class="card hidden">
+  <p class="eyebrow">From insight to experiment</p><h2>Did this reflection give you an idea to try something differently?</h2>
+  <p class="note">Not “what should you change?” Only whether one real situation came to mind where you would like to try a different response.</p>
+  <div id="intentChoices" class="choice-row"><button type="button" data-intent="yes" class="primary">Yes</button><button type="button" data-intent="unsure">Not sure yet</button><button type="button" data-intent="no">Not now</button></div>
+  <div id="quietEnd" class="quiet hidden"></div>
+  <div id="experimentBuilder" class="builder hidden">
+    <h3>Which direction feels most relevant right now?</h3>
+    <p class="note">Choose for yourself. 2rasi does not select a direction based on your highest score.</p>
+    <div class="direction-grid" id="directionChoices">
+      <button class="direction" type="button" data-direction="choice"><span class="mini">Creator direction</span><h3>More choice</h3><p>One manageable step instead of helplessness.</p></button>
+      <button class="direction" type="button" data-direction="boundaries"><span class="mini">Coach direction</span><h3>More questions and boundaries</h3><p>Less solving for the other person, more leaving responsibility with them.</p></button>
+      <button class="direction" type="button" data-direction="challenge"><span class="mini">Challenger direction</span><h3>Clear, respectful challenge</h3><p>Separate the problem and behaviour from the person.</p></button>
+    </div>
+    <div id="textBuilder" class="builder hidden">
+      <label for="experimentText">What exactly will you try?</label>
+      <textarea id="experimentText" maxlength="280" placeholder="One small, observable action. For example, what you will do in your next conversation."></textarea>
+      <div class="example-line"><span id="exampleText"></span><button id="useExampleBtn" class="small-link" type="button">Use example</button></div>
+      <div class="builder"><label>When would you like to return to it?</label><div class="reminder-options">
+        <label class="reminder-option"><input type="radio" name="reminderDays" value="3"><span>In 3 days</span></label>
+        <label class="reminder-option"><input type="radio" name="reminderDays" value="7" checked><span>In 7 days</span></label>
+        <label class="reminder-option"><input type="radio" name="reminderDays" value="14"><span>In 14 days</span></label>
+      </div></div>
+      <p class="note">Your experiment text is stored only in this browser's localStorage. The text is not added to the calendar event.</p>
+      <div class="choice-row"><button id="saveExperimentBtn" class="primary" type="button">Save for myself</button></div>
+    </div>
+  </div>
+  <div id="savedExperimentBox" class="saved-box hidden"><p class="eyebrow">Saved</p><div id="savedExperimentText" class="experiment-text"></div><div id="savedExperimentMeta" class="meta-row"></div><div class="choice-row"><button id="calendarBtn" class="primary" type="button">Add reminder to calendar</button><button id="openReviewBtn" type="button">Review now</button></div><p class="note">The calendar event uses a generic title. Your experiment text is not included in the `.ics` file.</p></div>
+</section>
+</main>
+<footer class="shell">© <span id="year"></span> Drama Triangle reflection product pilot · Test responses, experiment and return notes are stored only on this device and are not sent anywhere.</footer>
+<script>
+const ITEMS=[
+{id:'A1',role:'AUKA',reverse:false,text:'I often feel powerless to resolve conflicts.'},
+{id:'A2',role:'AUKA',reverse:false,text:'I wait for other people to solve my problems.'},
+{id:'A3',role:'AUKA',reverse:true,text:'When a problem appears, I take initiative without delay.'},
+{id:'A4',role:'AUKA',reverse:false,text:'I often think that I am being treated unfairly.'},
+{id:'A5',role:'AUKA',reverse:false,text:'I postpone action because I doubt that I can succeed.'},
+{id:'A6',role:'AUKA',reverse:true,text:'Even in conflict, I feel that I have choices and influence.'},
+{id:'G1',role:'GELB',reverse:false,text:'I feel responsible for helping others even when they have not asked.'},
+{id:'G2',role:'GELB',reverse:false,text:'I find it hard to say no when someone asks for help.'},
+{id:'G3',role:'GELB',reverse:false,text:'I often solve other people’s problems for them.'},
+{id:'G4',role:'GELB',reverse:true,text:'Before helping, I first ask what the person actually needs.'},
+{id:'G5',role:'GELB',reverse:false,text:'I feel guilty if I do not help, even when helping disrupts my own plans.'},
+{id:'G6',role:'GELB',reverse:true,text:'I respect other people’s autonomy and boundaries even when I think I know a better way.'},
+{id:'P1',role:'PERS',reverse:false,text:'I often point out directly what other people are doing wrong.'},
+{id:'P2',role:'PERS',reverse:false,text:'In conflict, winning matters more than reaching agreement.'},
+{id:'P3',role:'PERS',reverse:false,text:'When others make mistakes, I feel an urge to control them.'},
+{id:'P4',role:'PERS',reverse:false,text:'Sometimes I raise my voice so that I will be heard.'},
+{id:'P5',role:'PERS',reverse:true,text:'Even in conflict, respect and cooperation remain a priority.'},
+{id:'P6',role:'PERS',reverse:true,text:'I give criticism in a way that helps the other person grow rather than become defensive.'}
+];
+const THRESHOLDS={LOW:2.5,MID:3.5};
+const ROLE_LABEL={AUKA:'Victim',GELB:'Rescuer',PERS:'Persecutor'};
+const ROLE_COLORS={AUKA:'a',GELB:'r',PERS:'p'};
+const RESULT_KEY='karpman_last_action_loop_en';
+const ACTION_KEY='karpman_action_loop_v1_en';
+const PILOT_URL='https://olemoz1977.github.io/karpman-apklausa/public/pilot/action-loop-v01/en/#experiment';
+const DIRECTIONS={
+  choice:{label:'More choice',short:'Creator direction',example:'When I catch myself thinking “I can’t”, I will name one thing I can do.'},
+  boundaries:{label:'More questions and boundaries',short:'Coach direction',example:'Before offering a solution, I will first ask what the other person wants to do themselves.'},
+  challenge:{label:'Clear, respectful challenge',short:'Challenger direction',example:'I will talk about the specific behaviour and its impact, not the person’s traits.'}
+};
+const OUTCOME_LABEL={done:'I tried it',partial:'Partly',not_done:'I didn’t try it',closed:'No longer relevant'};
+let order=shuffle([...ITEMS.map((_,i)=>i)]),selectedDirection=null,selectedOutcome=null;
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function renderQuestions(){const c=document.getElementById('questions');c.innerHTML='';order.forEach((idx,n)=>{const it=ITEMS[idx],row=document.createElement('div');row.className='row';row.innerHTML=`<div class="qtext"><span class="qnum">${n+1}</span>${it.text}</div><div><div class="scale" role="radiogroup" aria-label="Answer scale from 1 to 5">${[1,2,3,4,5].map(v=>{const id=`${it.id}_${v}`;return `<label class="opt" for="${id}"><input type="radio" name="${it.id}" id="${id}" value="${v}" aria-label="${v}"><span>${v}</span></label>`}).join('')}<div class="scale-legend"><span>Never</span><span>Always</span></div></div></div>`;c.appendChild(row)});c.querySelectorAll('input[type="radio"]').forEach(el=>el.addEventListener('change',updateProgress));updateProgress()}
+function getResponses(){const answers={};for(const it of ITEMS){const sel=document.querySelector(`input[name="${it.id}"]:checked`);answers[it.id]=sel?Number(sel.value):null}return answers}
+function isComplete(a){return Object.values(a).every(v=>v!==null)}
+function updateProgress(){const a=getResponses(),n=Object.values(a).filter(v=>v!==null).length;document.getElementById('progressText').textContent=`${n} / ${ITEMS.length}`;document.getElementById('progressFill').style.width=`${Math.round(n/ITEMS.length*100)}%`}
+function computeScores(answers){const agg={AUKA:{sum:0,n:0},GELB:{sum:0,n:0},PERS:{sum:0,n:0}};for(const it of ITEMS){let v=answers[it.id];if(v==null)continue;if(it.reverse)v=6-v;agg[it.role].sum+=v;agg[it.role].n++}const res={};for(const role of Object.keys(agg)){const {sum,n}=agg[role],avg=n?sum/n:0,pct=Math.round(((avg-1)/4)*100);let level='mid';if(avg<THRESHOLDS.LOW)level='low';else if(avg>THRESHOLDS.MID)level='high';res[role]={avg,pct,level,raw:{sum,n}}}return res}
+function renderBars(scores){const bars=document.getElementById('bars');bars.innerHTML='';for(const role of ['AUKA','GELB','PERS']){const sc=scores[role],bar=document.createElement('div');bar.className='bar';bar.innerHTML=`<div class="label"><div>${ROLE_LABEL[role]}</div><div>${sc.pct}% · avg. ${sc.avg.toFixed(2)}/5</div></div><div class="track"><div class="fill ${ROLE_COLORS[role]}" style="width:${sc.pct}%"></div></div>`;bars.appendChild(bar)}}
+function readAction(){try{return JSON.parse(localStorage.getItem(ACTION_KEY)||'null')}catch{return null}}
+function writeAction(v){localStorage.setItem(ACTION_KEY,JSON.stringify(v))}
+function fmtDate(iso){if(!iso)return '—';return new Intl.DateTimeFormat('en-GB',{year:'numeric',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(iso))}
+function daysUntil(iso){return Math.ceil((new Date(iso).getTime()-Date.now())/86400000)}
+function renderReturnCard(){const a=readAction(),card=document.getElementById('returnCard');if(!a){card.classList.add('hidden');return}card.classList.remove('hidden');document.getElementById('returnExperiment').textContent=a.experiment||'';const due=daysUntil(a.dueAt);let status;if(a.status==='open'){status=due<=0?'It is time to return to this experiment.':due===1?'About 1 day until your return.':`About ${due} days until your return.`}else{status=`Last return: ${OUTCOME_LABEL[a.status]||a.status}.`}document.getElementById('returnStatus').textContent=status;const d=DIRECTIONS[a.direction];document.getElementById('returnMeta').innerHTML=`<span class="meta-chip">${d?d.label:'Experiment'}</span><span class="meta-chip">Created ${fmtDate(a.createdAt)}</span><span class="meta-chip">Return ${fmtDate(a.dueAt)}</span>`}
+function showFollowup(){const a=readAction();if(!a)return;selectedOutcome=null;document.querySelectorAll('.followup-option').forEach(b=>b.classList.remove('selected'));document.getElementById('followupNote').value='';const s=document.getElementById('followupSection');s.classList.remove('hidden');s.scrollIntoView({behavior:'smooth',block:'start'})}
+function showActionAfterResult(){document.getElementById('actionSection').classList.remove('hidden')}
+function selectIntent(intent){const quiet=document.getElementById('quietEnd'),builder=document.getElementById('experimentBuilder');quiet.classList.add('hidden');builder.classList.add('hidden');if(intent==='yes'){builder.classList.remove('hidden');return}quiet.textContent=intent==='unsure'?'That is fine. You can simply let the result settle. 2rasi does not require an action.':'That is fine. The reflection can end here. Not every insight needs to become an action.';quiet.classList.remove('hidden')}
+function selectDirection(key){selectedDirection=key;document.querySelectorAll('#directionChoices .direction').forEach(b=>b.classList.toggle('selected',b.dataset.direction===key));const d=DIRECTIONS[key];document.getElementById('exampleText').textContent=`Example: ${d.example}`;document.getElementById('textBuilder').classList.remove('hidden');document.getElementById('experimentText').focus()}
+function saveExperiment(){const text=document.getElementById('experimentText').value.trim();if(!selectedDirection){alert('Choose a direction first.');return}if(text.length<5){alert('Write one specific thing you want to try.');return}const existing=readAction();if(existing&&existing.status==='open'&&!confirm('There is already an open experiment on this device. Replace it with the new one?'))return;const days=Number(document.querySelector('input[name="reminderDays"]:checked')?.value||7),now=new Date(),due=new Date(now.getTime()+days*86400000);const a={version:1,source:'drama-triangle-action-loop-v0.1-en',createdAt:now.toISOString(),dueAt:due.toISOString(),direction:selectedDirection,experiment:text.slice(0,280),reminderDays:days,status:'open',followUps:[]};writeAction(a);renderSavedBox(a);renderReturnCard()}
+function renderSavedBox(a){document.getElementById('savedExperimentText').textContent=a.experiment;const d=DIRECTIONS[a.direction];document.getElementById('savedExperimentMeta').innerHTML=`<span class="meta-chip">${d?d.label:'Experiment'}</span><span class="meta-chip">Return ${fmtDate(a.dueAt)}</span>`;document.getElementById('savedExperimentBox').classList.remove('hidden');document.getElementById('experimentBuilder').classList.add('hidden')}
+function icsDate(d){return d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z')}
+function icsEscape(s){return String(s).replace(/\\/g,'\\\\').replace(/\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;')}
+function downloadICS(){const a=readAction();if(!a)return;const start=new Date(a.dueAt),end=new Date(start.getTime()+30*60000),uid=(crypto.randomUUID?crypto.randomUUID():Math.random().toString(36).slice(2))+'@2rasi.com';const body=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//2rasi//Drama Triangle Action Loop//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH','BEGIN:VEVENT',`UID:${uid}`,`DTSTAMP:${icsDate(new Date())}`,`DTSTART:${icsDate(start)}`,`DTEND:${icsDate(end)}`,'SUMMARY:2rasi · return to your experiment',`DESCRIPTION:${icsEscape('Return to 2rasi and review your chosen behaviour experiment. Your experiment text stays in your browser.')}`,`URL:${PILOT_URL}`,'BEGIN:VALARM','TRIGGER:-PT10M','ACTION:DISPLAY','DESCRIPTION:2rasi · return to your experiment','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');const blob=new Blob([body],{type:'text/calendar;charset=utf-8'}),x=document.createElement('a');x.href=URL.createObjectURL(blob);x.download='2rasi-return-to-experiment.ics';document.body.appendChild(x);x.click();URL.revokeObjectURL(x.href);x.remove()}
+function saveFollowup(){if(!selectedOutcome){alert('Choose what happened.');return}const a=readAction();if(!a)return;const note=document.getElementById('followupNote').value.trim().slice(0,500),entry={at:new Date().toISOString(),outcome:selectedOutcome,note};a.status=selectedOutcome;a.followUps=Array.isArray(a.followUps)?a.followUps:[];a.followUps.push(entry);writeAction(a);document.getElementById('followupSection').classList.add('hidden');renderReturnCard();document.getElementById('returnCard').scrollIntoView({behavior:'smooth',block:'start'})}
+function saveJSON(payload){const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`drama_triangle_reflection_${new Date().toISOString().slice(0,19)}.json`;document.body.appendChild(a);a.click();URL.revokeObjectURL(a.href);a.remove()}
+
+document.getElementById('shuffleBtn').addEventListener('click',()=>{order=shuffle(order);renderQuestions()});
+document.getElementById('resetBtn').addEventListener('click',()=>{document.querySelectorAll('#form input[type="radio"]:checked').forEach(i=>i.checked=false);document.getElementById('results').classList.add('hidden');document.getElementById('insights').classList.add('hidden');document.getElementById('actionSection').classList.add('hidden');updateProgress()});
+document.getElementById('calcBtn').addEventListener('click',()=>{const answers=getResponses();if(!isComplete(answers)){const missing=ITEMS.filter(it=>answers[it.id]==null).map(it=>it.id).join(', ');alert('Complete all statements. Missing: '+missing);return}const scores=computeScores(answers);renderBars(scores);document.getElementById('results').classList.remove('hidden');document.getElementById('insights').classList.remove('hidden');showActionAfterResult();localStorage.setItem(RESULT_KEY,JSON.stringify({answers,scores,ts:Date.now()}));document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'})});
+document.getElementById('printBtn').addEventListener('click',()=>window.print());
+document.getElementById('saveBtn').addEventListener('click',()=>{const answers=getResponses(),complete=isComplete(answers);saveJSON({meta:{tool:'Drama Triangle reflection EN pilot',version:'1.1.0-action-loop-pilot',time:new Date().toISOString(),complete},answers,scores:complete?computeScores(answers):null,actionLoop:readAction()})});
+document.querySelectorAll('#intentChoices [data-intent]').forEach(b=>b.addEventListener('click',()=>selectIntent(b.dataset.intent)));
+document.querySelectorAll('#directionChoices [data-direction]').forEach(b=>b.addEventListener('click',()=>selectDirection(b.dataset.direction)));
+document.getElementById('useExampleBtn').addEventListener('click',()=>{if(selectedDirection)document.getElementById('experimentText').value=DIRECTIONS[selectedDirection].example});
+document.getElementById('saveExperimentBtn').addEventListener('click',saveExperiment);
+document.getElementById('calendarBtn').addEventListener('click',downloadICS);
+document.getElementById('openReviewBtn').addEventListener('click',showFollowup);
+document.getElementById('reviewNowBtn').addEventListener('click',showFollowup);
+document.getElementById('cancelFollowupBtn').addEventListener('click',()=>document.getElementById('followupSection').classList.add('hidden'));
+document.querySelectorAll('.followup-option').forEach(b=>b.addEventListener('click',()=>{selectedOutcome=b.dataset.outcome;document.querySelectorAll('.followup-option').forEach(x=>x.classList.toggle('selected',x===b))}));
+document.getElementById('saveFollowupBtn').addEventListener('click',saveFollowup);
+document.getElementById('deleteExperimentBtn').addEventListener('click',()=>{if(confirm('Delete the experiment and return notes stored on this device?')){localStorage.removeItem(ACTION_KEY);document.getElementById('returnCard').classList.add('hidden');document.getElementById('followupSection').classList.add('hidden')}});
+
+renderQuestions();
+(function restoreResponses(){const raw=localStorage.getItem(RESULT_KEY);if(!raw)return;try{const {answers}=JSON.parse(raw);if(!answers)return;for(const [id,v] of Object.entries(answers)){if(v==null)continue;const el=document.getElementById(`${id}_${v}`);if(el)el.checked=true}updateProgress()}catch{}})();
+renderReturnCard();
+if(location.hash==='#experiment'&&readAction())setTimeout(showFollowup,150);
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
